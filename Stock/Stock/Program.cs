@@ -45,4 +45,6 @@ namespace Stock
                 }
             }
         }
+    }
+}
    
