@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace Countries
 {
@@ -12,6 +13,26 @@ namespace Countries
     {
         static void Main(string[] args)
         {
+            //CREATE TABLE[dbo].[Cities] (
+            //    [Id]  INT NOT NULL,
+            //    [Int] VARCHAR(100) NOT NULL,
+            //    PRIMARY KEY CLUSTERED([Id] ASC)
+            //);
+
+            //CREATE TABLE[dbo].[People] (
+            //    [Id]  INT NOT NULL,
+            //    [Int] VARCHAR(100) NOT NULL,
+            //    PRIMARY KEY CLUSTERED([Id] ASC)
+            //);
+
+            //CREATE TABLE[dbo].[Сapital] (
+            //    [Id] INT NOT NULL,
+            //    PRIMARY KEY CLUSTERED([Id] ASC)
+            //);
+
+            string connString = ConfigurationManager.ConnectionStrings["Countries"].ConnectionString;
+            SqlConnection connection = new SqlConnection(connString);
+
             DataSet setCities = new DataSet();
             DataSet setPeople = new DataSet();
             DataSet setCapital = new DataSet();
