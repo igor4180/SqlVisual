@@ -10,11 +10,32 @@ using System.Windows.Forms;
 
 namespace BooksShop
 {
-    public partial class AddCategory : UserControl
+    public partial class AddCategory : Form
     {
-        public AddCategory()
+        int lastid;
+        private object tb_id;
+
+        public AddCategory(int id)
         {
+            lastid = id;
             InitializeComponent();
+        }
+
+        private void button_ok_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void button_cancel_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
+
+        private void AddCategory_Load(object sender, EventArgs e)
+        {
+            tb_id.Text = lastid.ToString();
         }
     }
 }
