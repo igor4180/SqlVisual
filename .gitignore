@@ -364,3 +364,6 @@ FodyWeavers.xsd
 /Stationery
 /ConsoleApp1
 /LibraryTest4
+/BooksShop/BooksShop/AddBooks.cs
+/BooksShop/BooksShop/AddBooks.Designer.cs
+/.gitignore
