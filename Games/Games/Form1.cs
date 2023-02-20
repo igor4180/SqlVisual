@@ -12,6 +12,15 @@ using System.Configuration;
 
 namespace Games
 {
+    //CREATE TABLE[dbo].[Games]
+    //(
+    //[Id] INT NOT NULL,
+    //[Name] VARCHAR(100) NOT NULL,
+    //[Studio] VARCHAR(50)  NOT NULL,
+    //[Style]  VARCHAR(50)  NOT NULL,
+    //[Date]   INT NOT NULL,
+    //PRIMARY KEY CLUSTERED([Id] ASC)
+    //);
     public partial class Form1 : Form
     {
         SqlDataAdapter adapterGames = null;
