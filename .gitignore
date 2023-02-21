@@ -367,3 +367,4 @@ FodyWeavers.xsd
 /BooksShop/BooksShop/AddBooks.cs
 /BooksShop/BooksShop/AddBooks.Designer.cs
 /.gitignore
+/Games/Games/Drapper.Settings.json
