@@ -38,7 +38,7 @@ namespace Games
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["MSSQL"].ConnectionString); 
+            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString); 
             sqlConnection.Open();
             SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * From Games", connection.ConnectionString);
 
