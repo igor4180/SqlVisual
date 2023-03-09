@@ -30,7 +30,7 @@ namespace Games
         SqlCommandBuilder builder2 = null;
         SqlDataReader reader = null;
         DataSet dataSetGames = new DataSet();
-        private SqlConnection sqlConnection = null;
+        //private SqlConnection sqlConnection = null;
         public Form1()
         {
             InitializeComponent();
@@ -38,18 +38,33 @@ namespace Games
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString); 
-            sqlConnection.Open();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * From Games", connection.ConnectionString);
+            connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnString"].ConnectionString);
+            //sqlConnection.Open();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("Select * From Games", connection);
+            dataAdapter.Fill(dataSetGames);
+            dataGridView1.DataSource = dataSetGames.Tables[0];
 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Name Like '%{textBox1.Text}%'";
-            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Stydio Like '%{textBox1.Text}%'";
-            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Style Like '%{textBox1.Text}%'";
-            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Date Like '%{textBox1.Text}%'";
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Style Like '%{textBox2.Text}%'";
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Stydio Like '%{textBox3.Text}%'";
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter = $"Date Like '%{textBox4.Text}%'";
         }
     }
 }
